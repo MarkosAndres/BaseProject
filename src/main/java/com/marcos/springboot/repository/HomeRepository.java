@@ -1,11 +1,12 @@
 package com.marcos.springboot.repository;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class HomeRepository {
+import com.marcos.springboot.entities.User;
+import com.marcos.springboot.repository.custom.HomeRepositoryCustom;
 
-	public String getMessageFromRepository() {
-		return "home repository";
-	}
+@Repository
+public interface HomeRepository extends CrudRepository<User, Long>, HomeRepositoryCustom {
+	
 }
