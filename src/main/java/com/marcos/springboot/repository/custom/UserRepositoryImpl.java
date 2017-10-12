@@ -1,6 +1,6 @@
 package com.marcos.springboot.repository.custom;
 
-public class HomeRepositoryImpl implements HomeRepositoryCustom {
+public class UserRepositoryImpl implements UserRepositoryCustom {
 
 	@Override
 	public String getMessageFromRepository() {

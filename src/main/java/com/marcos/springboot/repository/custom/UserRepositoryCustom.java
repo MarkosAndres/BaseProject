@@ -1,6 +1,6 @@
 package com.marcos.springboot.repository.custom;
 
-public interface HomeRepositoryCustom {
+public interface UserRepositoryCustom {
 	
 	String getMessageFromRepository();
 
