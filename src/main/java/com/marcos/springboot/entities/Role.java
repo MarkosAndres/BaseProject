@@ -1,6 +1,9 @@
 package com.marcos.springboot.entities;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Set;
 
 @Entity
@@ -28,6 +31,7 @@ public class Role {
         this.name = name;
     }
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     public Set<User> getUsers() {
         return users;

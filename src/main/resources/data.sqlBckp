@@ -1,0 +1,6 @@
+
+INSERT INTO role VALUES (1, 'admin');
+
+INSERT INTO user (id, username, password) VALUES (1, 'mkyong@gmail.com', 'mkyong');
+
+
