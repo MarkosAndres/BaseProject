@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: markos.lerin
+      changes:
+        - createTable:
+            tableName: ROLE
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                   - createTable:
+            tableName: USERS
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: markos.lerin
+      changes:
+        - insert:
+            tableName: ROLE
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: admin
+		- insert:
+            tableName: USERS
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: password
+                  value: test123
+              - column:
+                  name: username
+                  value: markos
+                  
