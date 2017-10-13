@@ -9,6 +9,7 @@
   <changeSet id="02" author="markos.lerin">
     <comment>Inserting data</comment>
     
+    <!-- ************* ROLE TABLE ************* -->
     <insert tableName="ROLES">
       <column name="id" valueNumeric="1"/>
       <column name="name" value="admin"/>
@@ -18,6 +19,7 @@
       <column name="name" value="manager"/>
     </insert>
     
+    <!-- ************* USERS TABLE ************* -->
     <insert tableName="USERS">
       <column name="id" valueNumeric="1"/>
       <column name="username" value="markos"/>

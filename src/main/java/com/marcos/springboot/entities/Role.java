@@ -7,14 +7,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
 
 @Entity
-@Table(name = "role")
+@Table(name = "ROLES")
 public class Role {
     private Long id;
     private String name;
     private Set<User> users;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_generator")
+    @SequenceGenerator(name="role_generator", sequenceName = "role_id_seq", allocationSize=1)
     public Long getId() {
         return id;
     }

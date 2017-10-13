@@ -7,10 +7,12 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
   <changeSet id="01" author="markos.lerin">
-    
+  
+  
+	<!-- ************* USERS TABLE ************* -->
     <createTable tableName="USERS" remarks="A table to contain all users">
       <column name="id" type="int">
-        <constraints nullable="false" unique="true" primaryKey="true"/>
+        <constraints nullable="false" primaryKey="true"/>
       </column>
       <column name="username" type="varchar(255)">
         <constraints nullable="false" unique="true"/>
@@ -19,16 +21,21 @@
         <constraints nullable="false"/>
       </column>
     </createTable>
+    
+    <createSequence sequenceName="user_id_seq" startValue="1" incrementBy="1" />
 
+	<!-- ************* ROLES TABLE ************* -->
     <createTable tableName="ROLES" remarks="A table to contain all the roles">
       <column name="id" type="int">
-        <constraints nullable="false" primaryKey="true"/>
+        <constraints primaryKey="true"/>
       </column>
       <column name="name" type="varchar(100)">
-        <constraints nullable="false"/>
+        <constraints nullable="false" unique="true"/>
       </column>
     </createTable>
+    <createSequence sequenceName="role_id_seq" startValue="1" incrementBy="1"/>
     
+    <!-- ************* USER_ROLE TABLE ************* -->
     <createTable tableName="USER_ROLE">
       <column name="USER_ID" type="int">
         <constraints nullable="false"/>
@@ -37,7 +44,7 @@
         <constraints nullable="false"/>
       </column>
     </createTable>
-
+    
 	<addForeignKeyConstraint baseTableName="USER_ROLE"
 		baseColumnNames="USER_ID" constraintName="user_fk"
 		referencedTableName="USERS" referencedColumnNames="id" />
