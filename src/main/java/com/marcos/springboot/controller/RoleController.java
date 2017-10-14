@@ -12,17 +12,17 @@ import com.marcos.springboot.service.RoleService;
 
 @RestController
 public class RoleController {
-	
+
 	@Autowired
 	private RoleService roleService;
-	
+
 	@RequestMapping("/role/{id}")
 	public Role getRole(@PathVariable long id) {
 		return roleService.findRole(id);
 	}
 
-	@RequestMapping(value="/role", method=RequestMethod.POST)
-	public Role saveRole(@RequestBody Role role) {		
+	@RequestMapping(value = "/role", method = RequestMethod.POST)
+	public Role saveRole(@RequestBody Role role) {
 		return roleService.saveRole(role);
 	}
 }

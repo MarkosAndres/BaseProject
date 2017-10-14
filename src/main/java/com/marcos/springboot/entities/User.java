@@ -1,11 +1,21 @@
 package com.marcos.springboot.entities;
 
-import javax.persistence.*;
 import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "USERS")
 public class User {
+	
     private Long id;
     private String username;
     private String password;
@@ -13,7 +23,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-    @SequenceGenerator(name="user_generator", sequenceName = "user_id_seq", allocationSize=1)
+    @SequenceGenerator(name = "user_generator", sequenceName = "user_id_seq", allocationSize = 1)
     public Long getId() {
         return id;
     }

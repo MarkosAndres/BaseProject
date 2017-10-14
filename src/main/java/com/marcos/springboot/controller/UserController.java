@@ -15,14 +15,14 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-			
-	@RequestMapping(value="/user/{id}")
+	
+	@RequestMapping(value = "/user/{id}")
 	public User getUser(@PathVariable Long id) {		
 		return userService.findById(id);
 	}
 	
-	@RequestMapping(value="/user", method=RequestMethod.POST)
-	public User saveUser(@RequestBody User user) {		
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	public User saveUser(@RequestBody User user) {
 		return userService.saveUser(user);
 	}
 }

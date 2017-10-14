@@ -12,7 +12,7 @@ public class RoleService {
 	@Autowired
 	private RoleRepository roleRepository;
 	
-	public Role findRole(long id){
+	public Role findRole(long id) {
 		return roleRepository.findOne(id);
 	}
 
